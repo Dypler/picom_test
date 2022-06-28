@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Picom test_2</title>
+    <link rel="stylesheet" href="css/style.min.css">
+  </head>
+  <body>
+    <div id="app" v-cloak>
+      <div class="posts">
+        <div class="container">
+          <div class="posts__title">PICOM test</div>
+          <div class="posts__subtitle">С помощью axios получить записи (https://jsonplaceholder.typicode.com/ - тестовое API) и реализовать подгрузку записей при прокрутке страницы (по типу ленты новостей в вк) </div>
+          <div class="posts__list">
+            <div
+              class="posts__post post"
+              v-for="post in posts"
+              :key="post.id"
+            >
+              <div class="post__id">{{post.id}}</div>
+              <div class="post__title">{{post.title}}</div>
+              <div class="post__body">{{post.body}}</div>
+            </div>
+          </div>
+          <div class="posts__loading" v-if="more">
+            <svg viewBox="25 25 50 50">
+              <circle cx="50" cy="50" r="20"></circle>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="js/vue.global.prod.js"></script>
+    <script src="js/axios.min.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
